@@ -3,7 +3,7 @@
 string outputString;
 bool isAwesome = true;
 float decimalValue = 0.3f;
-byte hexByte = A7;
+byte hexByte = 0xa7;
 
 outputString = "Hello World!";
 
