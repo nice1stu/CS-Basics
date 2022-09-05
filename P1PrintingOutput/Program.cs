@@ -1,13 +1,6 @@
-﻿// See https://aka.ms/new-console-template for more information
+﻿// 003.3.1 Console Basics 1 Printing Output
 
 Console.WriteLine("Hello World!");
-// Output: Hello World!
-Console.WriteLine("Covfefe");
-// Output: Covfefe
-Console.WriteLine(5);
-// Output: 5
-Console.WriteLine("enemy");
-// Output: UnityEngine.GameObject
-Console.Write("Hello");
-Console.Write("World");
-Console.Write(5);
+Console.WriteLine("Welcome to 102 CSharp Basics");
+Console.WriteLine("It's easy to print output...");
+Console.WriteLine("...to the console");
