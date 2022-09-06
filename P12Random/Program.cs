@@ -1,2 +1,4 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿string seed = Console.ReadLine();
+int seedInt = Convert.ToInt32(seed);
+Console.WriteLine(seed);
+
