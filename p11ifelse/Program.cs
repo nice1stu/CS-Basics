@@ -1,4 +1,8 @@
 ﻿using System.ComponentModel.Design;
+using System.Net;
+
+string largerNumber;
+string parity;
 
 Console.WriteLine("What is your age?");
 string age = Console.ReadLine();
@@ -18,7 +22,7 @@ Console.WriteLine("Give me another number");
 string secondNumber = Console.ReadLine();
 int secondNumberI = Convert.ToInt32(secondNumber);
 
-if (ageInt > secondNumberI)
+/*if (ageInt > secondNumberI)
 {
     Console.WriteLine("Your age is larger");
 }
@@ -30,11 +34,31 @@ else
 {
     Console.WriteLine("The Number entered is same as your age");
 }
-if (ageInt % 2 == 0)
+*/
+
+if (ageInt > secondNumberI)
 {
-    Console.WriteLine("intValue is Even");
+    largerNumber = "Age";
+    Console.WriteLine("Your age is larger");
+}
+else if (ageInt < secondNumberI)
+{
+    largerNumber = "Number";
+    Console.WriteLine("Your age is smaller");
 }
 else
 {
-    Console.WriteLine("intValue is Odd");
+    largerNumber = "Age is same Number";
+    Console.WriteLine("The Number entered is same as your age");
 }
+// Console.WriteLine(largerNumber);
+
+if (largerNumber % 2 == 0)
+{
+    parity = "Even";
+}
+else
+{
+    parity = "Odd";
+}
+string message = $"{largerNumber} is {parity}";
