@@ -2,7 +2,6 @@
 
 Console.WriteLine("Please type in a number with decimal (.), then press [ENTER]");
 string answer = Console.ReadLine(); //Get number, store in answer
-string originalAnswer = answer;
 
 double answerDoubled = Convert.ToDouble(answer);
 Console.WriteLine(answerDoubled);
