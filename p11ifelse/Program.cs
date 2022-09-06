@@ -1,9 +1,5 @@
-﻿using System.ComponentModel.Design;
-using System.Net;
-
-//string largerNumber;
-//int biggerNumber;
-//string parity;
+﻿int biggerNumber;
+string parity;
 
 Console.WriteLine("What is your age?");
 string age = Console.ReadLine();
@@ -43,18 +39,16 @@ else
 string greeting = ageInt > secondNumberI ? "Your age is larger" : "Your age is smaller";
 Console.WriteLine(greeting);
 
-// Console.WriteLine(largerNumber); check if correct
-/*if (ageInt > secondNumberI)
+if (ageInt > secondNumberI)
 {
     biggerNumber = ageInt;
 }
-
-if (ageInt > secondNumberI)
+else
 {
     biggerNumber = secondNumberI;
 }
 
-    if (biggerNumber % 2 == 0)
+if (biggerNumber % 2 == 0)
 {
     parity = "Even";
 }
@@ -62,4 +56,5 @@ else
 {
     parity = "Odd";
 }
-string message = $"{biggerNumber} is {parity}";*/
+string message = $"{biggerNumber} is {parity}";
+Console.WriteLine(message);
