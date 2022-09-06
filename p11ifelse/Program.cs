@@ -16,13 +16,17 @@ else {
 
 Console.WriteLine("Give me another number");
 string secondNumber = Console.ReadLine();
-float secondNumberF = Convert.ToInt32(secondNumber);
+int secondNumberI = Convert.ToInt32(secondNumber);
 
-if (ageInt > secondNumberF)
+if (ageInt > secondNumberI)
 {
     Console.WriteLine("Your age is larger");
 }
+else if (ageInt < secondNumberI)
+{
+    Console.WriteLine("Your age is smaller");
+}
 else
 {
-    Console.WriteLine("The Number entered is larger");
+    Console.WriteLine("The Number entered is same as your age");
 }
