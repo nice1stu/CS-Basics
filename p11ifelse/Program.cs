@@ -30,3 +30,11 @@ else
 {
     Console.WriteLine("The Number entered is same as your age");
 }
+if (ageInt % 2 == 0)
+{
+    Console.WriteLine("intValue is Even");
+}
+else
+{
+    Console.WriteLine("intValue is Odd");
+}
