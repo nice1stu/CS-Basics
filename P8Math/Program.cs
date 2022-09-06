@@ -1,6 +1,10 @@
 ﻿// ask user for first number
 Console.WriteLine("Give me your first number.");
-string number1 = Console.ReadLine();
+string first = Console.ReadLine();
+double firstDoubled = Convert.ToDouble(first);
+// Console.WriteLine(firstDoubled); // check value of firstDoubled
 Console.WriteLine("Give me your second number.");
-string number2 = Console.ReadLine();
+string second = Console.ReadLine();
+double secondDoubled = Convert.ToDouble(second);
+// Console.WriteLine(secondDoubled); // check value of sceondDoubled
 
