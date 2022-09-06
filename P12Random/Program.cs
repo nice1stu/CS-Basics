@@ -35,25 +35,31 @@ Console.WriteLine("Give me a crit chance between 0.0 (0%) and 1.0 (100%)");
 string crit = Console.ReadLine();
 double critInt = Convert.ToDouble(crit);
 
-double crit1 = random.NextDouble()*critInt+0.3;
-Console.WriteLine(crit1);
-string attack1 = crit1 > critInt ? "Critcal!" : "No Critical";
-double crit2 = random.NextDouble()*critInt+0.3;
-Console.WriteLine(crit2);
-string attack2 = crit2 > critInt ? "Critcal!" : "No Critical";
-double crit3 = random.NextDouble()*critInt+0.3;
-Console.WriteLine(crit3);
-string attack3 = crit3 > critInt ? "Critcal!" : "No Critical";
-double crit4 = random.NextDouble()*critInt+0.3;
-Console.WriteLine(crit4);
-string attack4 = crit4 > critInt ? "Critcal!" : "No Critical";
-double crit5 = random.NextDouble()*critInt+0.3;
-Console.WriteLine(crit5);
-//string attack5 = crit5 > critInt ? "Critcal!" : "No Critical";
-string attack5;
+double crit1 = random.NextDouble()*critInt+(1-critInt);
+//Console.WriteLine(crit1);
+string attack1 = crit1 < critInt ? "Critcal!" : "No Critical";
+Console.WriteLine(attack1);
+double crit2 = random.NextDouble()*critInt+(1-critInt);
+//Console.WriteLine(crit2);
+string attack2 = crit2 < critInt ? "Critcal!" : "No Critical";
+Console.WriteLine(attack2);
+double crit3 = random.NextDouble()*critInt+(1-critInt);
+//Console.WriteLine(crit3);
+string attack3 = crit3 < critInt ? "Critcal!" : "No Critical";
+Console.WriteLine(attack3);
+double crit4 = random.NextDouble()*critInt+(1-critInt);
+//Console.WriteLine(crit4);
+string attack4 = crit4 < critInt ? "Critcal!" : "No Critical";
+Console.WriteLine(attack4);
+double crit5 = random.NextDouble()*critInt+(1-critInt);
+//Console.WriteLine(crit5);
+string attack5 = crit5 < critInt ? "Critcal!" : "No Critical";
+Console.WriteLine(attack5);
+/*string attack5;
 if (crit5 < critInt) {
     attack5 = "Critical!";
 }
 else {
     attack5 = "No Critical";
 }
+Console.WriteLine(attack5);*/
