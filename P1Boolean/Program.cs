@@ -1,2 +1,3 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿Console.WriteLine("What is your age?");
+string age = Console.ReadLine();
+int ageInt = Convert.ToInt32(age);
