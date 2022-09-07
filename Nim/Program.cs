@@ -56,6 +56,7 @@ for (int i = 0; i < startMatches; i++)
     Console.Write("|");
 }
 Console.WriteLine(remainingMatches); //Fix brackets
+//check if remaining matches = 1, if so player wins
 startMatches = remainingMatches;
 
 //player2 Draw
@@ -73,8 +74,7 @@ for (int i = 0; i < startMatches; i++)
     Console.Write("|");
 }
 Console.WriteLine(remainingMatches); //Fix brackets
+//check if remaining matches = 1, if so player wins
 startMatches = remainingMatches;
 
-
-//Console.WriteLine(drawPlayer1i); check value
-//Console.WriteLine(drawPlayer2i); check value
+//if matches > 1 then return to player1 draw matches
