@@ -18,7 +18,7 @@ remainingMatches = startMatches;
 
 /*Game Mechanics:
  players draw 1-3 matches. Cant draw more then remainingMatches. when there is 1 match left, 
- the next player to draw will lose.
+ the player wins.
  Game - 
  player1 draws (is it more then 3, yes draw again) subtract player1draw from remaining matches.
  Is there 1 match left (yes player1 wins) player2 draws
@@ -31,6 +31,7 @@ string player1 = Console.ReadLine();
 Console.WriteLine("Player 2, please enter your name");
 string player2 = Console.ReadLine();
 
+
 //Game start
 Console.WriteLine("Lets Play !");
 
@@ -40,6 +41,7 @@ for (int i = 0; i < startMatches; i++)
 }
 Console.WriteLine(remainingMatches); //Fix brackets
 
+//Drawing mechanic
 //player1 Draw
 Console.WriteLine(player1 + howMany);
 string drawPlayer1 = Console.ReadLine();
@@ -56,7 +58,12 @@ for (int i = 0; i < startMatches; i++)
     Console.Write("|");
 }
 Console.WriteLine(remainingMatches); //Fix brackets
-//check if remaining matches = 1, if so player wins
+/*check if remaining matches = 1, if so player wins
+if (remainingMatches = 1)
+{
+    Console.Write(player1);
+    Console.WriteLine(" wins !");
+}*/
 startMatches = remainingMatches;
 
 //player2 Draw
@@ -74,6 +81,13 @@ for (int i = 0; i < startMatches; i++)
     Console.Write("|");
 }
 Console.WriteLine(remainingMatches); //Fix brackets
+/*check if remaining matches = 1, if so player wins
+if (remainingMatches = 1)
+{
+    Console.Write(player1);
+    Console.WriteLine(" wins !");
+}*/
+
 //check if remaining matches = 1, if so player wins
 startMatches = remainingMatches;
 
