@@ -16,6 +16,10 @@ string howMany = " How many matches do you want to draw?";
 
 remainingMatches = startMatches;
 
+/*Game Mechanics:
+ players draw 1-3 matches. Cant draw more then remainingMatches. when there is 1 match left, 
+ the next player to draw will lose. */
+
 //Players enter name
 Console.WriteLine("Player 1, please enter your name");
 string player1 = Console.ReadLine();
@@ -67,5 +71,5 @@ Console.WriteLine(remainingMatches); //Fix brackets
 startMatches = remainingMatches;
 
 
-Console.WriteLine(drawPlayer1i);
-Console.WriteLine(drawPlayer2i);
+//Console.WriteLine(drawPlayer1i); check value
+//Console.WriteLine(drawPlayer2i); check value
