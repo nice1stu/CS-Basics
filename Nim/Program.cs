@@ -18,7 +18,12 @@ remainingMatches = startMatches;
 
 /*Game Mechanics:
  players draw 1-3 matches. Cant draw more then remainingMatches. when there is 1 match left, 
- the next player to draw will lose. */
+ the next player to draw will lose.
+ Game - 
+ player1 draws (is it more then 3, yes draw again) subtract player1draw from remaining matches.
+ Is there 1 match left (yes player1 wins) player2 draws
+ player2 draws (is it more then 3, yes draw again) subtract player2draw from remaining matches.
+ Is there 1 match left (yes player2 wins) player1 draws*/
 
 //Players enter name
 Console.WriteLine("Player 1, please enter your name");
