@@ -10,15 +10,30 @@ Console.WriteLine("Good Luck!");
 //Set up game
 int startMatches = 24;
 int remainingMatches;
-int drawPlayer2i;
-int drawPlayer1i;
-bool testWin;
-bool player1Turn;
-bool player2Turn;
-
+int drawPlayer2I;
+int drawPlayer1I;
+int matchesDrawn = 0; // sets how many matches drawn to check
+string currentPlayer;
 string howMany = " How many matches do you want to draw?";
 
 remainingMatches = startMatches;
+
+/*void drawMatches
+{
+    Console.WriteLine(currentPlayer + howMany);
+    string currentPlayer = Console.ReadLine();
+    currentPlayerI = Convert.ToInt32(currentPlayer);
+}
+
+//check amount matches drawn (use clamp)
+void checkDraw
+{
+    if (currentPlayerI > 3)
+    {
+        Console.WriteLine("Please draw between 1 - 3 matches only");
+        drawMatches;
+    }
+}*/
 
 /*Game Mechanics:
  players draw 1-3 matches. Cant draw more then remainingMatches. when there is 1 match left, 
@@ -38,7 +53,7 @@ string player2 = Console.ReadLine();
 //Game start
 Console.WriteLine("Lets Play !");
 
-while (remainingMatches != 1)
+
 {
     for (int i = 0; i < startMatches; i++)
     {
@@ -47,19 +62,21 @@ while (remainingMatches != 1)
     Console.WriteLine(remainingMatches); //Fix brackets
 
 //Drawing mechanic
+//while (remainingMatches != 1)
+
 //player1 Draw
     Console.WriteLine(player1 + howMany);
     string drawPlayer1 = Console.ReadLine();
-    drawPlayer1i = Convert.ToInt32(drawPlayer1);
+    drawPlayer1I = Convert.ToInt32(drawPlayer1);
     
-    if (drawPlayer1i > 3)
+    if (drawPlayer1I > 3)
     {
         Console.WriteLine("Please draw between 1 - 3 matches only");
     }
 
 
 // return to drawPlayer1
-    remainingMatches = startMatches - drawPlayer1i;
+    remainingMatches = startMatches - drawPlayer1I;
 
     for (int i = 0; i < startMatches; i++)
     {
@@ -73,14 +90,14 @@ while (remainingMatches != 1)
 //player2 Draw
     Console.WriteLine(player2 + howMany);
     string drawPlayer2 = Console.ReadLine();
-    drawPlayer2i = Convert.ToInt32(drawPlayer2);
-    if (drawPlayer2i > 3)
+    drawPlayer2I = Convert.ToInt32(drawPlayer2);
+    if (drawPlayer2I > 3)
     {
         Console.WriteLine("Please draw between 1 - 3 matches only");
     }
 
 // return to drawPlayer2
-    remainingMatches = startMatches - drawPlayer2i;
+    remainingMatches = startMatches - drawPlayer2I;
     for (int i = 0; i < startMatches; i++)
     {
         Console.Write("|");
@@ -88,7 +105,7 @@ while (remainingMatches != 1)
 
     Console.WriteLine(remainingMatches); //Fix brackets
 }
-Console.WriteLine("You win!");
+//Console.WriteLine("You win!");
 //check if remaining matches = 1, if so player wins
 //startMatches = remainingMatches;
 
