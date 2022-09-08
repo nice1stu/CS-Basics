@@ -50,8 +50,8 @@ Console.WriteLine("Lets Play !");
             {
                 Console.Write("|");
             }
-
-            Console.WriteLine(remainingMatches); //Fix brackets
+            string interp = $" ({remainingMatches})";
+            Console.WriteLine(interp);
 
             if (remainingMatches > 1)
             {
@@ -78,8 +78,8 @@ Console.WriteLine("Lets Play !");
             {
                 Console.Write("|");
             }
-
-            Console.WriteLine(remainingMatches); //Fix brackets
+            string interp = $" ({remainingMatches})";
+            Console.WriteLine(interp);
             
             if (remainingMatches > 1)
             {
