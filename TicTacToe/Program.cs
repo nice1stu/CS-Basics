@@ -26,3 +26,8 @@ else
     Console.WriteLine("Player 2 is HAL2000");
     player2 = "HAL2000";
 }
+
+//Game start
+Console.WriteLine(" ");
+Console.WriteLine("Lets Play !");
+
