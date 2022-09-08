@@ -38,7 +38,8 @@ Console.WriteLine("Lets Play !");
     while (remainingMatches != 1)
     {
         if (remainingMatches != 1)
-        {//player1 Draw
+        {
+            //player1 Draw
             Console.WriteLine(player1 + howMany);
             string drawPlayer1 = Console.ReadLine();
             drawPlayer1I = Convert.ToInt32(drawPlayer1);
@@ -56,11 +57,14 @@ Console.WriteLine("Lets Play !");
             {
                 startMatches = remainingMatches;
                 //    double ceil = Math.Ceiling(12.1); apply to eliminate 0
-            }else
+            }
+            else
+            {
                 Console.Write(player1);
                 Console.WriteLine(" Wins !");
+            }
         }
-        else
+        //else
         {//player2 Draw
 
             Console.WriteLine(player2 + howMany);
@@ -80,9 +84,13 @@ Console.WriteLine("Lets Play !");
             {
                 startMatches = remainingMatches;
                 //    double ceil = Math.Ceiling(12.1); apply to eliminate 0
-            }else
+                
+            }
+            else
+            {
                 Console.Write(player2);
-            Console.WriteLine(" Wins !");
+                Console.WriteLine(" Wins !");
+            }
         }
 }
 //if (winnerIs != player1)
