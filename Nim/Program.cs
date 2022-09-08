@@ -58,7 +58,8 @@ Console.WriteLine("Lets Play !");
             }
             remainingMatches = startMatches - drawPlayer1I; 
             remainingMatches = Math.Max(1, remainingMatches);
-
+            startMatches = remainingMatches;
+            
             if (remainingMatches > 1) //does not print win startement
             {
                 for (int i = 0; i < startMatches; i++)
@@ -100,7 +101,8 @@ Console.WriteLine("Lets Play !");
             }
             remainingMatches = startMatches - drawPlayer2I;
             remainingMatches = Math.Max(1, remainingMatches);
-
+            startMatches = remainingMatches;
+            
             for (int i = 0; i < startMatches; i++)
             {
                 Console.Write("|");
