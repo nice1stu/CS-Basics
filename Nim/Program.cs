@@ -37,28 +37,31 @@ Console.WriteLine("Lets Play !");
 //Drawing mechanic
     while (remainingMatches != 1)
     {
+        if (remainingMatches != 1)
+        {//player1 Draw
+            Console.WriteLine(player1 + howMany);
+            string drawPlayer1 = Console.ReadLine();
+            drawPlayer1I = Convert.ToInt32(drawPlayer1);
+            drawPlayer1I = (int)Math.Clamp((double)drawPlayer1I, 0, 3);
+            remainingMatches = startMatches - drawPlayer1I;
 
-//player1 Draw
+            for (int i = 0; i < startMatches; i++)
+            {
+                Console.Write("|");
+            }
 
-        Console.WriteLine(player1 + howMany);
-        string drawPlayer1 = Console.ReadLine();
-        drawPlayer1I = Convert.ToInt32(drawPlayer1);
-        drawPlayer1I = (int)Math.Clamp((double)drawPlayer1I, 0, 3);
-        remainingMatches = startMatches - drawPlayer1I;
+            Console.WriteLine(remainingMatches); //Fix brackets
 
-        for (int i = 0; i < startMatches; i++)
-        {
-            Console.Write("|");
+            if (remainingMatches > 1)
+            {
+                startMatches = remainingMatches;
+                //    double ceil = Math.Ceiling(12.1); apply to eliminate 0
+            }else
+                Console.Write(player1);
+                Console.WriteLine(" Wins !");
         }
-
-        Console.WriteLine(remainingMatches); //Fix brackets
-        
-        if (remainingMatches > 1)
-        {
-            startMatches = remainingMatches;
-            //    double ceil = Math.Ceiling(12.1); apply to eliminate 0
-
-//player2 Draw
+        else
+        {//player2 Draw
 
             Console.WriteLine(player2 + howMany);
             string drawPlayer2 = Console.ReadLine();
@@ -73,19 +76,18 @@ Console.WriteLine("Lets Play !");
 
             Console.WriteLine(remainingMatches); //Fix brackets
             
-            startMatches = remainingMatches;
-        }
-        else
-        {
-            //winnerIs = player1;
-            Console.Write(player1);
+            if (remainingMatches > 1)
+            {
+                startMatches = remainingMatches;
+                //    double ceil = Math.Ceiling(12.1); apply to eliminate 0
+            }else
+                Console.Write(player2);
             Console.WriteLine(" Wins !");
         }
-    }
 }
-if (winnerIs != player1)
-{
-    winnerIs = player2;
-    Console.Write(winnerIs);
-    Console.WriteLine(" Wins !");
+//if (winnerIs != player1)
+//{
+//    winnerIs = player2;
+//    Console.Write(winnerIs);
+//    Console.WriteLine(" Wins !");
 }
