@@ -190,23 +190,12 @@ Console.WriteLine("Lets Play !");
             if (remainingMatches > 1)
             {
                 // Player2 Draw
-                int drawPlayer2I = 0;
-                Console.WriteLine(player2 + howMany);
-                //drawPlayer2I = 0;
-                while (drawPlayer2I != 1 && drawPlayer2I != 2 && drawPlayer2I != 3)
-                {
-                    try
-                    {
-                        //string drawPlayer2 = Console.ReadLine();
-                        drawPlayer2I = Convert.ToInt32(Console.ReadLine());
-                        drawPlayer2I = (int)Math.Clamp((double)drawPlayer2I, 0, 3);
-                    }
-                    catch (Exception)
-                    {
-                        Console.WriteLine("Please enter a number 1,2 or 3");
-                    }
-                }
-
+                //int drawPlayer2I = 0;
+                Random random = new Random(); //initialize new random
+                int drawPlayer2I = random.Next(1, 4);
+                Console.Write("HAL2000 draws ");
+                Console.WriteLine(drawPlayer2I);
+                
                 remainingMatches = startMatches - drawPlayer2I;
                 remainingMatches = Math.Max(1, remainingMatches);
                 startMatches = remainingMatches;
