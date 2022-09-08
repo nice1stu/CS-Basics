@@ -64,7 +64,8 @@ Console.WriteLine("Lets Play !");
                 Console.WriteLine(" Wins !");
             }
         }
-        //else
+        
+        if (remainingMatches != 1)
         {//player2 Draw
 
             Console.WriteLine(player2 + howMany);
@@ -93,9 +94,4 @@ Console.WriteLine("Lets Play !");
             }
         }
 }
-//if (winnerIs != player1)
-//{
-//    winnerIs = player2;
-//    Console.Write(winnerIs);
-//    Console.WriteLine(" Wins !");
 }
