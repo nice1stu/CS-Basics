@@ -59,42 +59,51 @@ Console.WriteLine("Lets Play !");
     {
         Console.Write("|");
     }
+
     Console.WriteLine(remainingMatches); //Fix brackets
 
 //Drawing mechanic
-//while (remainingMatches != 1)
+    while (remainingMatches != 1)
+    {
+
+
 
 //player1 Draw
-    Console.WriteLine(player1 + howMany);
-    string drawPlayer1 = Console.ReadLine();
-    drawPlayer1I = Convert.ToInt32(drawPlayer1);
-    drawPlayer1I = (int)Math.Clamp((double)drawPlayer1I, 0, 3);
-    remainingMatches = startMatches - drawPlayer1I;
+        Console.WriteLine(player1 + howMany);
+        string drawPlayer1 = Console.ReadLine();
+        drawPlayer1I = Convert.ToInt32(drawPlayer1);
+        drawPlayer1I = (int)Math.Clamp((double)drawPlayer1I, 0, 3);
+        remainingMatches = startMatches - drawPlayer1I;
 
-    for (int i = 0; i < startMatches; i++)
-    {
-        Console.Write("|");
-    }
+        for (int i = 0; i < startMatches; i++)
+        {
+            Console.Write("|");
+        }
 
-    Console.WriteLine(remainingMatches); //Fix brackets
+        Console.WriteLine(remainingMatches); //Fix brackets
 
-    startMatches = remainingMatches;
+        startMatches = remainingMatches;
 
 //player2 Draw
-    Console.WriteLine(player2 + howMany);
-    string drawPlayer2 = Console.ReadLine();
-    drawPlayer2I = Convert.ToInt32(drawPlayer2);
-    drawPlayer2I = (int)Math.Clamp((double)drawPlayer2I, 0, 3);
-    remainingMatches = startMatches - drawPlayer2I;
-    for (int i = 0; i < startMatches; i++)
-    {
-        Console.Write("|");
-    }
+        Console.WriteLine(player2 + howMany);
+        string drawPlayer2 = Console.ReadLine();
+        drawPlayer2I = Convert.ToInt32(drawPlayer2);
+        drawPlayer2I = (int)Math.Clamp((double)drawPlayer2I, 0, 3);
+        remainingMatches = startMatches - drawPlayer2I;
 
-    Console.WriteLine(remainingMatches); //Fix brackets
-}
+        for (int i = 0; i < startMatches; i++)
+        {
+            Console.Write("|");
+        }
+
+        Console.WriteLine(remainingMatches); //Fix brackets
+        
+        startMatches = remainingMatches;
+    }
 //Console.WriteLine("You win!");
 //check if remaining matches = 1, if so player wins
-//startMatches = remainingMatches;
+
 
 //if matches > 1 then return to player1 draw matches
+}
+Console.WriteLine("You win!");
