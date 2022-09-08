@@ -9,7 +9,7 @@ Console.WriteLine("Good Luck!");
 
 //Set up game
 double startMatches = 24;
-double remainingMatches;
+double remainingMatches = 24;
 int drawPlayer2I;
 int drawPlayer1I;
 string howMany = " How many matches do you want to draw?";
@@ -31,8 +31,8 @@ Console.WriteLine("Lets Play !");
     {
         Console.Write("|");
     }
-
-    Console.WriteLine(remainingMatches); //Fix brackets
+    string collate = $" ({remainingMatches})";
+    Console.WriteLine(collate);
 
 //Drawing mechanic
     while (remainingMatches != 1)
