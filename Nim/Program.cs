@@ -36,9 +36,9 @@ Console.WriteLine("Lets Play !");
     Console.WriteLine(displayBrackets);
 
 //Drawing mechanic
-    while (remainingMatches != 1)
+    while (remainingMatches > 1)
     {
-        if (remainingMatches != 1)
+        if (remainingMatches > 1)
         {
             //player1 Draw
             Console.WriteLine(player1 + howMany);
@@ -58,26 +58,30 @@ Console.WriteLine("Lets Play !");
             }
             remainingMatches = startMatches - drawPlayer1I; 
             remainingMatches = Math.Max(1, remainingMatches);
-            
-            for (int i = 0; i < startMatches; i++)
-            {
-                Console.Write("|");
-            }
-            string putInBrackets = $" ({remainingMatches})";
-            Console.WriteLine(putInBrackets);
 
-            if (remainingMatches > 1)
+            if (remainingMatches > 1) //does not print win startement
             {
-                startMatches = remainingMatches;
-            }
-            else
-            {
-                Console.Write(player1);
-                Console.WriteLine(" Wins !");
+                for (int i = 0; i < startMatches; i++)
+                {
+                    Console.Write("|");
+                }
+
+                string putInBrackets = $" ({remainingMatches})";
+                Console.WriteLine(putInBrackets);
+
+                //if (remainingMatches > 1)
+                //{
+                //    startMatches = remainingMatches;
+                //}
+                //else
+                {
+                    Console.Write(player1);
+                    Console.WriteLine(" Wins !");
+                }
             }
         }
         
-        if (remainingMatches != 1)
+        if (remainingMatches > 1)
         {//player2 Draw
             Console.WriteLine(player2 + howMany);
             drawPlayer2I = 0;
@@ -96,7 +100,6 @@ Console.WriteLine("Lets Play !");
             }
             remainingMatches = startMatches - drawPlayer2I;
             remainingMatches = Math.Max(1, remainingMatches);
-            Console.WriteLine(remainingMatches);
 
             for (int i = 0; i < startMatches; i++)
             {
@@ -105,7 +108,7 @@ Console.WriteLine("Lets Play !");
             string putInBrackets = $" ({remainingMatches})";
             Console.WriteLine(putInBrackets);//
             
-            if (remainingMatches != 1)
+            if (remainingMatches > 1)
             {
                 startMatches = remainingMatches;
                 Console.WriteLine(startMatches);
