@@ -8,11 +8,10 @@ Console.WriteLine("The Player who has to take last match loses");
 Console.WriteLine("Good Luck!");
 
 //Set up game
-int startMatches = 24;
-int remainingMatches;
+double startMatches = 24;
+double remainingMatches;
 int drawPlayer2I;
 int drawPlayer1I;
-int matchesDrawn = 0; // sets how many matches drawn to check
 string howMany = " How many matches do you want to draw?";
 string winnerIs = "Bob";
 
@@ -23,7 +22,6 @@ Console.WriteLine("Player 1, please enter your name");
 string player1 = Console.ReadLine();
 Console.WriteLine("Player 2, please enter your name");
 string player2 = Console.ReadLine();
-
 
 //Game start
 Console.WriteLine("Lets Play !");
@@ -58,6 +56,7 @@ Console.WriteLine("Lets Play !");
         if (remainingMatches > 1)
         {
             startMatches = remainingMatches;
+            //    double ceil = Math.Ceiling(12.1); apply to eliminate 0
 
 //player2 Draw
 
