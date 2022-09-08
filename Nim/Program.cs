@@ -10,12 +10,12 @@ Console.WriteLine(" ");
 
 //Set up game
 double startMatches = 24;
-double remainingMatches;
-int drawPlayer2I;
-int drawPlayer1I;
+double remainingMatches = startMatches;
+//int drawPlayer2I;
+//int drawPlayer1I;
 string howMany = " How many matches do you want to draw?";
 
-remainingMatches = startMatches;
+//remainingMatches = startMatches;
 
 //Players enter name
 Console.WriteLine("Player 1, please enter your name");
@@ -41,17 +41,17 @@ Console.WriteLine("Lets Play !");
         if (remainingMatches > 1)
         {
             //player1 Draw
+            int drawPlayer1I = 0;
             Console.WriteLine(player1 + howMany);
-            drawPlayer1I = 0;
+            //drawPlayer1I = 0;
             while (drawPlayer1I != 1 &&  drawPlayer1I != 2 && drawPlayer1I != 3)
             {
                 try
                 {
-                    //string drawPlayer1 = Console.ReadLine();
                     drawPlayer1I = Convert.ToInt32(Console.ReadLine());
                     drawPlayer1I = (int)Math.Clamp((double)drawPlayer1I, 0, 3);
                 }
-                catch (Exception e)
+                catch (Exception)
                 {
                     Console.WriteLine("Please enter a number 1,2 or 3");
                 }
@@ -60,7 +60,7 @@ Console.WriteLine("Lets Play !");
             remainingMatches = Math.Max(1, remainingMatches);
             startMatches = remainingMatches;
             
-            if (remainingMatches > 1) //does not print win startement
+            if (remainingMatches > 1)
             {
                 for (int i = 0; i < startMatches; i++)
                 {
@@ -69,11 +69,7 @@ Console.WriteLine("Lets Play !");
 
                 string putInBrackets = $" ({remainingMatches})";
                 Console.WriteLine(putInBrackets);
-
-                //if (remainingMatches > 1)
-                //{
-                //    startMatches = remainingMatches;
-            } //}
+            }
             else
             {
                     Console.Write(player1);
@@ -83,9 +79,11 @@ Console.WriteLine("Lets Play !");
         }
         
         if (remainingMatches > 1)
-        {//player2 Draw
+        {
+            // Player2 Draw
+            int drawPlayer2I = 0;
             Console.WriteLine(player2 + howMany);
-            drawPlayer2I = 0;
+            //drawPlayer2I = 0;
             while (drawPlayer2I != 1 &&  drawPlayer2I != 2 && drawPlayer2I != 3)
             {
                 try
@@ -94,7 +92,7 @@ Console.WriteLine("Lets Play !");
                     drawPlayer2I = Convert.ToInt32(Console.ReadLine());
                     drawPlayer2I = (int)Math.Clamp((double)drawPlayer2I, 0, 3);
                 }
-                catch (Exception e)
+                catch (Exception)
                 {
                     Console.WriteLine("Please enter a number 1,2 or 3");
                 }
