@@ -1,11 +1,12 @@
 ﻿//Start game
-Console.WriteLine("Welcome to Nim!");
+Console.WriteLine("-- Welcome to Nim! --");
 Console.WriteLine("How to play");
 Console.WriteLine("2 Players");
 Console.WriteLine("Players take turns to draw matches");
 Console.WriteLine("Each player may draw 1,2 or 3 matches (not more or less)");
 Console.WriteLine("The Player who has to take last match loses");
 Console.WriteLine("Good Luck!");
+Console.WriteLine(" ");
 
 //Set up game
 double startMatches = 24;
@@ -13,7 +14,6 @@ double remainingMatches;
 int drawPlayer2I;
 int drawPlayer1I;
 string howMany = " How many matches do you want to draw?";
-//string winnerIs = "Bob";
 
 remainingMatches = startMatches;
 
@@ -24,6 +24,7 @@ Console.WriteLine("Player 2, please enter your name");
 string player2 = Console.ReadLine();
 
 //Game start
+Console.WriteLine(" ");
 Console.WriteLine("Lets Play !");
 
 {
