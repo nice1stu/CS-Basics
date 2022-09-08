@@ -45,7 +45,7 @@ Console.WriteLine("Lets Play !");
             drawPlayer1I = Convert.ToInt32(drawPlayer1);
             drawPlayer1I = (int)Math.Clamp((double)drawPlayer1I, 0, 3);
             remainingMatches = startMatches - drawPlayer1I; 
-            remainingMatches = Math.Max(1, remainingMatches);// if remainingMatches < 1 then remaingMatches = 1  
+            remainingMatches = Math.Max(1, remainingMatches);
             for (int i = 0; i < startMatches; i++)
             {
                 Console.Write("|");
@@ -56,7 +56,6 @@ Console.WriteLine("Lets Play !");
             if (remainingMatches > 1)
             {
                 startMatches = remainingMatches;
-                //    double ceil = Math.Ceiling(12.1); apply to eliminate 0
             }
             else
             {
@@ -71,7 +70,7 @@ Console.WriteLine("Lets Play !");
             string drawPlayer2 = Console.ReadLine();
             drawPlayer2I = Convert.ToInt32(drawPlayer2);
             drawPlayer2I = (int)Math.Clamp((double)drawPlayer2I, 0, 3);
-            remainingMatches = Math.Max(1, remainingMatches);// if remainingMatches < 1 then remaingMatches = 1  
+            remainingMatches = Math.Max(1, remainingMatches);
             remainingMatches = startMatches - drawPlayer2I;
 
             for (int i = 0; i < startMatches; i++)
@@ -84,8 +83,6 @@ Console.WriteLine("Lets Play !");
             if (remainingMatches > 1)
             {
                 startMatches = remainingMatches;
-                //    double ceil = Math.Ceiling(12.1); apply to eliminate 0
-                
             }
             else
             {
