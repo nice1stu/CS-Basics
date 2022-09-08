@@ -21,6 +21,7 @@ string player2;
 Console.WriteLine("Please enter the number of player 1 or 2");
 numPlayers = Convert.ToInt32(Console.ReadLine());
 numPlayers = (int)Math.Clamp((double)numPlayers, 1, 2);
+
 if (numPlayers == 2)
 {
     //Players enter name
@@ -34,7 +35,7 @@ else
     Console.WriteLine("Player 1, please enter your name");
     player1 = Console.ReadLine();
     Console.WriteLine("Player 2 is HAL2000");
-    player2 = "HAL2000";
+    player2 = "HAL9000";
 }
 
 //Game start
@@ -185,40 +186,48 @@ Console.WriteLine("Lets Play !");
                     Console.WriteLine(" Wins !");
                 }
 
-            }
-
+            
+            
             if (remainingMatches > 1)
-            {
-                // Player2 Draw
-                //int drawPlayer2I = 0;
-                Random random = new Random(); //initialize new random
-                int drawPlayer2I = random.Next(1, 4);
-                Console.Write("HAL2000 draws ");
-                Console.WriteLine(drawPlayer2I);
+            
+                // PlayerAI Draw
                 
-                remainingMatches = startMatches - drawPlayer2I;
-                remainingMatches = Math.Max(1, remainingMatches);
-                startMatches = remainingMatches;
-
-                for (int i = 0; i < startMatches; i++)
+               /*if (remainingMatches == 21 || remainingMatches == 17 || remainingMatches == 13 || remainingMatches == 9 || remainingMatches == 5)
                 {
-                    Console.Write("|");
+                    int drawPlayer2I = (4 - drawPlayer1I);
                 }
+               else
+               {*/
+                   Random random = new Random(); //initialize new random
+                   int drawPlayer2I = random.Next(1, 4);
 
-                string putInBrackets = $" ({remainingMatches})";
-                Console.WriteLine(putInBrackets); //
 
-                if (remainingMatches > 1)
-                {
-                    startMatches = remainingMatches;
-                    Console.WriteLine(startMatches);
-                }
-                else
-                {
-                    Console.Write(player2);
-                    Console.WriteLine(" Wins !");
-                }
+                   Console.Write("HAL9000 draws ");
+                   Console.WriteLine(drawPlayer2I);
+
+                   remainingMatches = startMatches - drawPlayer2I;
+                   remainingMatches = Math.Max(1, remainingMatches);
+                   startMatches = remainingMatches;
+
+                   for (int i = 0; i < startMatches; i++)
+                   {
+                       Console.Write("|");
+                   }
+
+                   string putInBrackets1 = $" ({remainingMatches})";
+                   Console.WriteLine(putInBrackets1); //
+
+                   if (remainingMatches > 1)
+                   {
+                       startMatches = remainingMatches;
+                       Console.WriteLine(startMatches);
+                   }
+                   else
+                   {
+                       Console.Write(player2);
+                       Console.WriteLine(" Wins !");
+                   }
+               }
             }
         }
     }
-}
