@@ -72,13 +72,13 @@ Console.WriteLine("Lets Play !");
                 //if (remainingMatches > 1)
                 //{
                 //    startMatches = remainingMatches;
-                //}
-                //else
-                {
+            } //}
+            else
+            {
                     Console.Write(player1);
                     Console.WriteLine(" Wins !");
-                }
             }
+            
         }
         
         if (remainingMatches > 1)
