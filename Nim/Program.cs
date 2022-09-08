@@ -68,14 +68,7 @@ Console.WriteLine("Lets Play !");
     Console.WriteLine(player1 + howMany);
     string drawPlayer1 = Console.ReadLine();
     drawPlayer1I = Convert.ToInt32(drawPlayer1);
-    
-    if (drawPlayer1I > 3)
-    {
-        Console.WriteLine("Please draw between 1 - 3 matches only");
-    }
-
-
-// return to drawPlayer1
+    drawPlayer1I = (int)Math.Clamp((double)drawPlayer1I, 0, 3);
     remainingMatches = startMatches - drawPlayer1I;
 
     for (int i = 0; i < startMatches; i++)
@@ -91,12 +84,7 @@ Console.WriteLine("Lets Play !");
     Console.WriteLine(player2 + howMany);
     string drawPlayer2 = Console.ReadLine();
     drawPlayer2I = Convert.ToInt32(drawPlayer2);
-    if (drawPlayer2I > 3)
-    {
-        Console.WriteLine("Please draw between 1 - 3 matches only");
-    }
-
-// return to drawPlayer2
+    drawPlayer2I = (int)Math.Clamp((double)drawPlayer2I, 0, 3);
     remainingMatches = startMatches - drawPlayer2I;
     for (int i = 0; i < startMatches; i++)
     {
