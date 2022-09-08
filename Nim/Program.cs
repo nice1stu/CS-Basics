@@ -9,11 +9,11 @@ Console.WriteLine("Good Luck!");
 
 //Set up game
 double startMatches = 24;
-double remainingMatches = 24;
+double remainingMatches;
 int drawPlayer2I;
 int drawPlayer1I;
 string howMany = " How many matches do you want to draw?";
-string winnerIs = "Bob";
+//string winnerIs = "Bob";
 
 remainingMatches = startMatches;
 
@@ -31,8 +31,8 @@ Console.WriteLine("Lets Play !");
     {
         Console.Write("|");
     }
-    string collate = $" ({remainingMatches})";
-    Console.WriteLine(collate);
+    string displayBrackets = $" ({remainingMatches})";
+    Console.WriteLine(displayBrackets);
 
 //Drawing mechanic
     while (remainingMatches != 1)
@@ -44,14 +44,14 @@ Console.WriteLine("Lets Play !");
             string drawPlayer1 = Console.ReadLine();
             drawPlayer1I = Convert.ToInt32(drawPlayer1);
             drawPlayer1I = (int)Math.Clamp((double)drawPlayer1I, 0, 3);
-            remainingMatches = startMatches - drawPlayer1I;
-
+            remainingMatches = startMatches - drawPlayer1I; 
+            remainingMatches = Math.Max(1, remainingMatches);// if remainingMatches < 1 then remaingMatches = 1  
             for (int i = 0; i < startMatches; i++)
             {
                 Console.Write("|");
             }
-            string interp = $" ({remainingMatches})";
-            Console.WriteLine(interp);
+            string putInBrackets = $" ({remainingMatches})";
+            Console.WriteLine(putInBrackets);
 
             if (remainingMatches > 1)
             {
@@ -67,19 +67,19 @@ Console.WriteLine("Lets Play !");
         
         if (remainingMatches != 1)
         {//player2 Draw
-
             Console.WriteLine(player2 + howMany);
             string drawPlayer2 = Console.ReadLine();
             drawPlayer2I = Convert.ToInt32(drawPlayer2);
             drawPlayer2I = (int)Math.Clamp((double)drawPlayer2I, 0, 3);
+            remainingMatches = Math.Max(1, remainingMatches);// if remainingMatches < 1 then remaingMatches = 1  
             remainingMatches = startMatches - drawPlayer2I;
 
             for (int i = 0; i < startMatches; i++)
             {
                 Console.Write("|");
             }
-            string interp = $" ({remainingMatches})";
-            Console.WriteLine(interp);
+            string putInBrackets = $" ({remainingMatches})";
+            Console.WriteLine(putInBrackets);
             
             if (remainingMatches > 1)
             {
@@ -93,5 +93,5 @@ Console.WriteLine("Lets Play !");
                 Console.WriteLine(" Wins !");
             }
         }
-}
+    }
 }
