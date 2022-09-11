@@ -189,10 +189,24 @@ Console.WriteLine("Lets Play !");
 
             if (remainingMatches > 1)
             {
-                // Player2 Draw
-                //int drawPlayer2I = 0;
-                Random random = new Random(); //initialize new random
-                int drawPlayer2I = random.Next(1, 4);
+                // AI Player2 Draw
+                double drawPlayer2I = 0;
+                /*Random random = new Random(); //initialize new random
+                int drawPlayer2I = random.Next(1, 4);*/
+                if (remainingMatches == 5)
+                {
+                    drawPlayer2I = 3;
+                }
+                else if (remainingMatches > 5)
+                {
+                    drawPlayer2I = remainingMatches - 5;
+                }
+
+                else
+                {
+                    drawPlayer2I = remainingMatches - 1;
+                }
+
                 Console.Write("HAL2000 draws ");
                 Console.WriteLine(drawPlayer2I);
                 
