@@ -68,19 +68,26 @@ Console.WriteLine(" ");
 
 //Draw Board
 //Clear screen !
+void drawBoard()
+{
+    string row3 = $"{num7} | {num8} | {num9}";
+    string row2 = $"{num4} | {num5} | {num6}";
+    string row1 = $"{num1} | {num2} | {num3}";
 
-string row3 = $"{num7} | {num8} | {num9}";
-string row2 = $"{num4} | {num5} | {num6}";
-string row1 = $"{num1} | {num2} | {num3}";
+    Console.WriteLine(row3);
+    Console.WriteLine("- | - | - ");
+    Console.WriteLine(row2);
+    Console.WriteLine("- | - | - ");
+    Console.WriteLine(row1);
+}
 
-Console.WriteLine(row3);
-Console.WriteLine("- | - | - ");
-Console.WriteLine(row2);
-Console.WriteLine("- | - | - ");
-Console.WriteLine(row1);
-
+// !!! Note add condition if cell already used, can't over-ride
 // Player Turns
 // player1 choose
+//match choicePlayer1 to numX. replace numX = x
+//kXI = 10
+drawBoard();
+
 Console.Write(player1);
 Console.WriteLine(" choose the Number of the square you want to place your x");
 string choicePlayer1 = Console.ReadLine();
@@ -107,37 +114,83 @@ else if (choicePlayer1 == "4")
 }
 else if (choicePlayer1 == "5")
 {
-    num3 = "x";
+    num5 = "x";
     k5I = 10;
 }
 else if (choicePlayer1 == "6")
 {
-    num2 = "x";
+    num6 = "x";
     k6I = 10;
 }
 else if (choicePlayer1 == "7")
 {
-    num3 = "x";
+    num7 = "x";
     k7I = 10;
 }
 else if (choicePlayer1 == "8")
 {
-    num2 = "x";
+    num8 = "x";
     k8I = 10;
 }
 else if (choicePlayer1 == "9")
 {
-    num3 = "x";
+    num9 = "x";
     k9I = 10;
 }
-//match choicePlayer1 to KX. replace kX = x
-//kXi = 10
+
+drawBoard();
 //check sum of rows, columns diagonals, if sum = 30 player1 wins
 
 // player2 choose
 Console.Write(player2);
 Console.WriteLine(" choose the Number of the square you want to place your o");
-int choicePlayer2 = Convert.ToInt32(Console.ReadLine());
-//match choicePlayer1 to KX. replace kX = o
-//kXi = 0
+string choicePlayer2 = Console.ReadLine();
+if (choicePlayer2 == "1")
+{
+    num1 = "o";
+    k1I = 10;
+}
+else if (choicePlayer2 == "2")
+{
+    num2 = "o";
+    k2I = 10;
+    
+}
+else if (choicePlayer2 == "3")
+{
+    num3 = "o";
+    k3I = 10;
+}
+else if (choicePlayer2 == "4")
+{
+    num4 = "o";
+    k4I = 10;
+}
+else if (choicePlayer2 == "5")
+{
+    num5 = "o";
+    k5I = 10;
+}
+else if (choicePlayer2 == "6")
+{
+    num6 = "o";
+    k6I = 10;
+}
+else if (choicePlayer2 == "7")
+{
+    num7 = "o";
+    k7I = 10;
+}
+else if (choicePlayer2 == "8")
+{
+    num8 = "o";
+    k8I = 10;
+}
+else if (choicePlayer2 == "9")
+{
+    num9 = "o";
+    k9I = 10;
+}
+
+drawBoard();
 //check sum of rows, columns diagonals, if sum = 0 player2 wins
