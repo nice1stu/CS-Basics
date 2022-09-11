@@ -194,3 +194,4 @@ else if (choicePlayer2 == "9")
 
 drawBoard();
 //check sum of rows, columns diagonals, if sum = 0 player2 wins
+// Console.Clear(); clear the screen
