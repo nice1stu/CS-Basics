@@ -17,14 +17,14 @@ int k6I = 5;
 int k7I = 5;
 int k8I = 5;
 int k9I = 5;
-int k1k3RowI = 15;
-int k4k6RowI = 15;
-int k7k9RowI = 15;
-int k1k7ColumnI = 15;
-int k2k8ColumnI = 15;
-int k3k9ColumnI = 15;
-int k1k9DiagonalI = 15;
-int k3k7DiagonalI = 15;
+int k1k3RowI = (k1I + k2I + k3I);
+int k4k6RowI = (k4I + k5I + k6I);
+int k7k9RowI = (k7I + k8I + k9I);
+int k1k7ColumnI = (k1I + k4I + k7I);
+int k2k8ColumnI = (k2I + k5I + k8I);
+int k3k9ColumnI = (k3I + k6I + k9I);
+int k1k9DiagonalI = (k1I + k5I + k9I);
+int k3k7DiagonalI = (k3I + k5I + k7I);
 // What value is shown
 string num1 = "1";
 string num2 = "2";
@@ -76,6 +76,11 @@ void drawBoard()
     Console.WriteLine(row2);
     Console.WriteLine("- | - | - ");
     Console.WriteLine(row1);
+}
+
+void winCheck()
+{
+    
 }
 
 // !!! Note add condition if cell already used, can't over-ride
