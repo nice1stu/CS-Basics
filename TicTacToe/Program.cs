@@ -1,7 +1,4 @@
 ﻿// TicTacToe
-
-using System.Diagnostics.CodeAnalysis;
-
 Console.WriteLine("-- Welcome to Tic Tac Toe --");
 
 int numPlayers;
@@ -148,48 +145,48 @@ string choicePlayer2 = Console.ReadLine();
 if (choicePlayer2 == "1")
 {
     num1 = "o";
-    k1I = 10;
+    k1I = 0;
 }
 else if (choicePlayer2 == "2")
 {
     num2 = "o";
-    k2I = 10;
+    k2I = 0;
     
 }
 else if (choicePlayer2 == "3")
 {
     num3 = "o";
-    k3I = 10;
+    k3I = 0;
 }
 else if (choicePlayer2 == "4")
 {
     num4 = "o";
-    k4I = 10;
+    k4I = 0;
 }
 else if (choicePlayer2 == "5")
 {
     num5 = "o";
-    k5I = 10;
+    k5I = 0;
 }
 else if (choicePlayer2 == "6")
 {
     num6 = "o";
-    k6I = 10;
+    k6I = 0;
 }
 else if (choicePlayer2 == "7")
 {
     num7 = "o";
-    k7I = 10;
+    k7I = 0;
 }
 else if (choicePlayer2 == "8")
 {
     num8 = "o";
-    k8I = 10;
+    k8I = 0;
 }
 else if (choicePlayer2 == "9")
 {
     num9 = "o";
-    k9I = 10;
+    k9I = 0;
 }
 
 drawBoard();
