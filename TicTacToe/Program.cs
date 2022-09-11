@@ -68,11 +68,6 @@ Console.WriteLine(" ");
 
 //Draw Board
 //Clear screen !
-/*Console.WriteLine(" 7 | 8 | 9 ");
-Console.WriteLine(" - | - | - ");
-Console.WriteLine(" 4 | 5 | 6 ");
-Console.WriteLine(" - | - | - ");
-Console.WriteLine(" 1 | 2 | 3 ");*/
 
 string row3 = $"{num7} | {num8} | {num9}";
 string row2 = $"{num4} | {num5} | {num6}";
@@ -88,7 +83,53 @@ Console.WriteLine(row1);
 // player1 choose
 Console.Write(player1);
 Console.WriteLine(" choose the Number of the square you want to place your x");
-int choicePlayer1 = Convert.ToInt32(Console.ReadLine());
+string choicePlayer1 = Console.ReadLine();
+if (choicePlayer1 == "1")
+{
+    num1 = "x";
+    k1I = 10;
+}
+else if (choicePlayer1 == "2")
+{
+    num2 = "x";
+    k2I = 10;
+    
+}
+else if (choicePlayer1 == "3")
+{
+    num3 = "x";
+    k3I = 10;
+}
+else if (choicePlayer1 == "4")
+{
+    num2 = "x";
+    k4I = 10;
+}
+else if (choicePlayer1 == "5")
+{
+    num3 = "x";
+    k5I = 10;
+}
+else if (choicePlayer1 == "6")
+{
+    num2 = "x";
+    k6I = 10;
+}
+else if (choicePlayer1 == "7")
+{
+    num3 = "x";
+    k7I = 10;
+}
+else if (choicePlayer1 == "8")
+{
+    num2 = "x";
+    k8I = 10;
+}
+else if (choicePlayer1 == "9")
+{
+    num3 = "x";
+    k9I = 10;
+}
 //match choicePlayer1 to KX. replace kX = x
 //kXi = 10
 //check sum of rows, columns diagonals, if sum = 30 player1 wins
