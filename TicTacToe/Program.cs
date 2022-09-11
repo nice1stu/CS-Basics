@@ -29,15 +29,15 @@ int k3k9ColumnI = 15;
 int k1k9DiagonalI = 15;
 int k3k7DiagonalI = 15;
 // What value is shown
-string k1 = "1";
-string k2 = "2";
-string k3 = "3";
-string k4 = "4";
-string k5 = "5";
-string k6 = "6";
-string k7 = "7";
-string k8 = "8";
-string k9 = "9";
+string num1 = "1";
+string num2 = "2";
+string num3 = "3";
+string num4 = "4";
+string num5 = "5";
+string num6 = "6";
+string num7 = "7";
+string num8 = "8";
+string num9 = "9";
 
 
 
@@ -67,11 +67,22 @@ Console.WriteLine("Lets Play !");
 Console.WriteLine(" ");
 
 //Draw Board
-Console.WriteLine(" 7 | 8 | 9 ");
+//Clear screen !
+/*Console.WriteLine(" 7 | 8 | 9 ");
 Console.WriteLine(" - | - | - ");
 Console.WriteLine(" 4 | 5 | 6 ");
 Console.WriteLine(" - | - | - ");
-Console.WriteLine(" 1 | 2 | 3 ");
+Console.WriteLine(" 1 | 2 | 3 ");*/
+
+string row3 = $"{num7} | {num8} | {num9}";
+string row2 = $"{num4} | {num5} | {num6}";
+string row1 = $"{num1} | {num2} | {num3}";
+
+Console.WriteLine(row3);
+Console.WriteLine("- | - | - ");
+Console.WriteLine(row2);
+Console.WriteLine("- | - | - ");
+Console.WriteLine(row1);
 
 // Player Turns
 // player1 choose
