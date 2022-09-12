@@ -18,7 +18,7 @@ else if (playerGuessI < randomNumber)
     Console.WriteLine("Nope! My number is Greater!");
     goto Guess;
 }
-else (playerGuessI > randomNumber)
+else if (playerGuessI > randomNumber)
 {
     Console.WriteLine("Nope! My number is Smaller!");
     goto Guess;
