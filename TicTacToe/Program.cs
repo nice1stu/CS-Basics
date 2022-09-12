@@ -112,9 +112,9 @@ void letsPlay()
     while (hasWon == false)
     {
         player1Turn();
-        hasWonCheck(hasWon);
+        winCheck();
         player2Turn();
-        hasWonCheck(hasWon);
+        winCheck();
         update();
         // exit
     }
@@ -127,12 +127,14 @@ void winCheck()
         Console.Write(player1);
         Console.WriteLine(" WINS !");
         hasWon = true;
+        hasWonCheck(hasWon);
     }
     else if (k1k3RowI == 0 || k4k6RowI == 0 || k7k9RowI == 0 || k1k7ColumnI == 0 || k2k8ColumnI == 0 || k3k9ColumnI == 0 || k1k9DiagonalI == 0 || k3k7DiagonalI == 0)
     {
         Console.Write(player2);
         Console.WriteLine(" WINS !");
         hasWon = true;
+        hasWonCheck(hasWon);
     }
 }
 
