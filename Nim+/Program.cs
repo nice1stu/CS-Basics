@@ -216,7 +216,11 @@ Console.WriteLine("Lets Play !");
                 {
                     drawPlayer2I = 3;
                 }
-                drawPlayer2I = (int)Math.Clamp((double)drawPlayer2I, 0, 3);
+                else if (remainingMatches < 5)
+                {
+                    drawPlayer2I = remainingMatches - 1;
+                }
+                drawPlayer2I = (int)Math.Clamp((double)drawPlayer2I, 1, 3);
                 Console.Write("HAL2000 draws ");
                 Console.WriteLine(drawPlayer2I);
 
