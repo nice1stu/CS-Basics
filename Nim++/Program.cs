@@ -1,4 +1,4 @@
-﻿//Nim+ with AI Player
+﻿//Nim+ with Modulo AI Player
 //Start game
 Console.WriteLine("-- Welcome to Nim! --");
 Console.WriteLine("How to play");
@@ -13,10 +13,10 @@ Console.WriteLine(" ");
 double startMatches = 24;
 double remainingMatches = startMatches;
 string howMany = " How many matches do you want to draw?";
+
 //int numPlayers;
 string player1;
 string player2;
-
 
 //Start Game
 //Number of players
