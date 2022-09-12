@@ -80,7 +80,16 @@ void drawBoard()
 
 void winCheck()
 {
-    
+    if (k1k3RowI == 30 || k4k6RowI == 30 || k7k9RowI == 30 || k1k7ColumnI == 30 || k2k8ColumnI == 30 || k3k9ColumnI == 30 || k1k9DiagonalI == 30 || k3k7DiagonalI == 30)
+    {
+        Console.Write(player1);
+        Console.WriteLine(" WINS !");
+    }
+    else if (k1k3RowI == 0 || k4k6RowI == 0 || k7k9RowI == 0 || k1k7ColumnI == 0 || k2k8ColumnI == 0 || k3k9ColumnI == 0 || k1k9DiagonalI == 0 || k3k7DiagonalI == 0)
+    {
+        Console.Write(player2);
+        Console.WriteLine(" WINS !");
+    }
 }
 
 // !!! Note add condition if cell already used, can't over-ride
