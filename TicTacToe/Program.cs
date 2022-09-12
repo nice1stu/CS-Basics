@@ -1,5 +1,4 @@
 ﻿// TicTacToe
-Console.WriteLine("-- Welcome to Tic Tac Toe --");
 
 int numPlayers;
 string player1;
@@ -38,7 +37,7 @@ string num8 = "8";
 string num9 = "9";
 
 
-
+/*
 //Number of players
 Console.WriteLine("Please enter the number of player 1 or 2");
 numPlayers = Convert.ToInt32(Console.ReadLine());
@@ -59,14 +58,43 @@ else
     player2 = "HAL2000";
 }
 
+start();*/
+
 //Game start
-Console.WriteLine(" ");
-Console.WriteLine("Lets Play !");
-Console.WriteLine(" ");
+void start()
+{
+    Console.WriteLine("-- Welcome to Tic Tac Toe --");
+    
+    //Number of players
+    Console.WriteLine("Please enter the number of player 1 or 2");
+    numPlayers = Convert.ToInt32(Console.ReadLine());
+    numPlayers = (int)Math.Clamp((double)numPlayers, 1, 2);
+    if (numPlayers == 2)
+    {
+        //Players enter name
+        Console.WriteLine("Player 1, please enter your name");
+        player1 = Console.ReadLine();
+        Console.WriteLine("Player 2, please enter your name");
+        player2 = Console.ReadLine();
+    }
+    else
+    {
+        Console.WriteLine("Player 1, please enter your name");
+        player1 = Console.ReadLine();
+        Console.WriteLine("Player 2 is HAL2000");
+        player2 = "HAL2000";
+    }
+
+    Console.WriteLine(" ");
+    Console.WriteLine("Lets Play !");
+    Console.WriteLine(" ");
+    DrawBoard();
+    letsPlay();
+}
 
 //Draw Board
 //Clear screen !
-void drawBoard()
+void DrawBoard()
 {
     string row3 = $"{num7} | {num8} | {num9}";
     string row2 = $"{num4} | {num5} | {num6}";
@@ -77,6 +105,19 @@ void drawBoard()
     Console.WriteLine(row2);
     Console.WriteLine("- | - | - ");
     Console.WriteLine(row1);
+}
+
+void letsPlay()
+{
+    while (hasWon == false)
+    {
+        player1Turn();
+        hasWonCheck(hasWon);
+        player2Turn();
+        hasWonCheck(hasWon);
+        update();
+        // exit
+    }
 }
 
 void winCheck()
@@ -97,19 +138,22 @@ void winCheck()
 
 void hasWonCheck(bool hasWon)
 {
-    if (hasWon == true);
+    if (hasWon);
     Console.WriteLine(" Thanks for playing");
-    // exit
+    //Console.Clear(); //clear the screen
 }
 
-// !!! Note add condition if cell already used, can't over-ride
-// Player Turns
-// player1 choose
-//match choicePlayer1 to numX. replace numX = x
-//kXI = 10
-drawBoard();
 
-void player1Turn()
+// Player Turns
+// !!! Note add condition if cell already used, can't over-ride
+void cellCheck()
+{
+    
+}
+
+//DrawBoard();
+
+void player1Turn() // player1 choose
 {
     Console.Write(player1);
     Console.WriteLine(" choose the Number of the square you want to place your x");
@@ -161,13 +205,12 @@ void player1Turn()
         k9I = 10;
     }
 
-    drawBoard();
-//check sum of rows, columns diagonals, if sum = 30 player1 wins
+    DrawBoard();
+    winCheck();
 }
 
-void player2Turn()
+void player2Turn()// player2 choose
 {
-// player2 choose
     Console.Write(player2);
     Console.WriteLine(" choose the Number of the square you want to place your o");
     string choicePlayer2 = Console.ReadLine();
@@ -180,7 +223,6 @@ void player2Turn()
     {
         num2 = "o";
         k2I = 0;
-
     }
     else if (choicePlayer2 == "3")
     {
@@ -216,15 +258,23 @@ void player2Turn()
     {
         num9 = "o";
         k9I = 0;
-    }
+    } 
+    
+    DrawBoard();
 }
 
-//drawBoard();
-//winCheck();
-player1Turn();
-hasWonCheck(hasWon);
-player2Turn();
-hasWonCheck(hasWon);
+void update()
+{
+    k1k3RowI = (k1I + k2I + k3I);
+    k4k6RowI = (k4I + k5I + k6I);
+    k7k9RowI = (k7I + k8I + k9I);
+    k1k7ColumnI = (k1I + k4I + k7I);
+    k2k8ColumnI = (k2I + k5I + k8I);
+    k3k9ColumnI = (k3I + k6I + k9I);
+    k1k9DiagonalI = (k1I + k5I + k9I);
+    k3k7DiagonalI = (k3I + k5I + k7I);
+}
+
+start();
+update();
 // add hasWon bool to end game or loop
-//check sum of rows, columns diagonals, if sum = 0 player2 wins
-// Console.Clear(); clear the screen
