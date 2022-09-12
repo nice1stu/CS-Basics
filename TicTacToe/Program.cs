@@ -4,6 +4,7 @@ Console.WriteLine("-- Welcome to Tic Tac Toe --");
 int numPlayers;
 string player1;
 string player2;
+bool hasWon = false;
 // assign player1 = x, assign player2 = o
 int x = 10;
 int o = 0;
@@ -84,12 +85,21 @@ void winCheck()
     {
         Console.Write(player1);
         Console.WriteLine(" WINS !");
+        hasWon = true;
     }
     else if (k1k3RowI == 0 || k4k6RowI == 0 || k7k9RowI == 0 || k1k7ColumnI == 0 || k2k8ColumnI == 0 || k3k9ColumnI == 0 || k1k9DiagonalI == 0 || k3k7DiagonalI == 0)
     {
         Console.Write(player2);
         Console.WriteLine(" WINS !");
+        hasWon = true;
     }
+}
+
+void hasWonCheck(bool hasWon)
+{
+    if (hasWon == true);
+    Console.WriteLine(" Thanks for playing");
+    // exit
 }
 
 // !!! Note add condition if cell already used, can't over-ride
@@ -99,110 +109,122 @@ void winCheck()
 //kXI = 10
 drawBoard();
 
-Console.Write(player1);
-Console.WriteLine(" choose the Number of the square you want to place your x");
-string choicePlayer1 = Console.ReadLine();
-if (choicePlayer1 == "1")
+void player1Turn()
 {
-    num1 = "x";
-    k1I = 10;
-}
-else if (choicePlayer1 == "2")
-{
-    num2 = "x";
-    k2I = 10;
-    
-}
-else if (choicePlayer1 == "3")
-{
-    num3 = "x";
-    k3I = 10;
-}
-else if (choicePlayer1 == "4")
-{
-    num2 = "x";
-    k4I = 10;
-}
-else if (choicePlayer1 == "5")
-{
-    num5 = "x";
-    k5I = 10;
-}
-else if (choicePlayer1 == "6")
-{
-    num6 = "x";
-    k6I = 10;
-}
-else if (choicePlayer1 == "7")
-{
-    num7 = "x";
-    k7I = 10;
-}
-else if (choicePlayer1 == "8")
-{
-    num8 = "x";
-    k8I = 10;
-}
-else if (choicePlayer1 == "9")
-{
-    num9 = "x";
-    k9I = 10;
-}
+    Console.Write(player1);
+    Console.WriteLine(" choose the Number of the square you want to place your x");
+    string choicePlayer1 = Console.ReadLine();
+    if (choicePlayer1 == "1")
+    {
+        num1 = "x";
+        k1I = 10;
+    }
+    else if (choicePlayer1 == "2")
+    {
+        num2 = "x";
+        k2I = 10;
 
-drawBoard();
+    }
+    else if (choicePlayer1 == "3")
+    {
+        num3 = "x";
+        k3I = 10;
+    }
+    else if (choicePlayer1 == "4")
+    {
+        num2 = "x";
+        k4I = 10;
+    }
+    else if (choicePlayer1 == "5")
+    {
+        num5 = "x";
+        k5I = 10;
+    }
+    else if (choicePlayer1 == "6")
+    {
+        num6 = "x";
+        k6I = 10;
+    }
+    else if (choicePlayer1 == "7")
+    {
+        num7 = "x";
+        k7I = 10;
+    }
+    else if (choicePlayer1 == "8")
+    {
+        num8 = "x";
+        k8I = 10;
+    }
+    else if (choicePlayer1 == "9")
+    {
+        num9 = "x";
+        k9I = 10;
+    }
+
+    drawBoard();
 //check sum of rows, columns diagonals, if sum = 30 player1 wins
+}
 
+void player2Turn()
+{
 // player2 choose
-Console.Write(player2);
-Console.WriteLine(" choose the Number of the square you want to place your o");
-string choicePlayer2 = Console.ReadLine();
-if (choicePlayer2 == "1")
-{
-    num1 = "o";
-    k1I = 0;
-}
-else if (choicePlayer2 == "2")
-{
-    num2 = "o";
-    k2I = 0;
-    
-}
-else if (choicePlayer2 == "3")
-{
-    num3 = "o";
-    k3I = 0;
-}
-else if (choicePlayer2 == "4")
-{
-    num4 = "o";
-    k4I = 0;
-}
-else if (choicePlayer2 == "5")
-{
-    num5 = "o";
-    k5I = 0;
-}
-else if (choicePlayer2 == "6")
-{
-    num6 = "o";
-    k6I = 0;
-}
-else if (choicePlayer2 == "7")
-{
-    num7 = "o";
-    k7I = 0;
-}
-else if (choicePlayer2 == "8")
-{
-    num8 = "o";
-    k8I = 0;
-}
-else if (choicePlayer2 == "9")
-{
-    num9 = "o";
-    k9I = 0;
+    Console.Write(player2);
+    Console.WriteLine(" choose the Number of the square you want to place your o");
+    string choicePlayer2 = Console.ReadLine();
+    if (choicePlayer2 == "1")
+    {
+        num1 = "o";
+        k1I = 0;
+    }
+    else if (choicePlayer2 == "2")
+    {
+        num2 = "o";
+        k2I = 0;
+
+    }
+    else if (choicePlayer2 == "3")
+    {
+        num3 = "o";
+        k3I = 0;
+    }
+    else if (choicePlayer2 == "4")
+    {
+        num4 = "o";
+        k4I = 0;
+    }
+    else if (choicePlayer2 == "5")
+    {
+        num5 = "o";
+        k5I = 0;
+    }
+    else if (choicePlayer2 == "6")
+    {
+        num6 = "o";
+        k6I = 0;
+    }
+    else if (choicePlayer2 == "7")
+    {
+        num7 = "o";
+        k7I = 0;
+    }
+    else if (choicePlayer2 == "8")
+    {
+        num8 = "o";
+        k8I = 0;
+    }
+    else if (choicePlayer2 == "9")
+    {
+        num9 = "o";
+        k9I = 0;
+    }
 }
 
-drawBoard();
+//drawBoard();
+//winCheck();
+player1Turn();
+hasWonCheck(hasWon);
+player2Turn();
+hasWonCheck(hasWon);
+// add hasWon bool to end game or loop
 //check sum of rows, columns diagonals, if sum = 0 player2 wins
 // Console.Clear(); clear the screen
