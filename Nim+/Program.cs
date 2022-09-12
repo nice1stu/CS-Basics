@@ -13,13 +13,13 @@ Console.WriteLine(" ");
 double startMatches = 24;
 double remainingMatches = startMatches;
 string howMany = " How many matches do you want to draw?";
-int numPlayers;
+//int numPlayers;
 string player1;
 string player2;
 
 //Number of players
 Console.WriteLine("Please enter the number of player 1 or 2");
-numPlayers = Convert.ToInt32(Console.ReadLine());
+int numPlayers = Convert.ToInt32(Console.ReadLine());
 numPlayers = (int)Math.Clamp((double)numPlayers, 1, 2);
 if (numPlayers == 2)
 {
@@ -188,12 +188,12 @@ Console.WriteLine("Lets Play !");
             }
 
             if (remainingMatches > 1)
-            {
+            /*{
                 // AI Player2 Draw
                 double drawPlayer2I = 0;
                 /*Random random = new Random(); //initialize new random
                 int drawPlayer2I = random.Next(1, 4);*/
-                if (remainingMatches == 5)
+              /*if (remainingMatches == 5)
                 {
                     drawPlayer2I = 3;
                 }
@@ -209,6 +209,70 @@ Console.WriteLine("Lets Play !");
                     //drawPlayer2I = remainingMatches - 5;
                     drawPlayer2I = (int)Math.Clamp((double)drawPlayer2I, 0, 3);
                 }
+
+
+
+                Console.Write("HAL2000 draws ");
+                Console.WriteLine(drawPlayer2I);
+                
+                remainingMatches = startMatches - drawPlayer2I;
+                remainingMatches = Math.Max(1, remainingMatches);
+                startMatches = remainingMatches;
+
+                for (int i = 0; i < startMatches; i++)
+                {
+                    Console.Write("|");
+                }
+
+                string putInBrackets = $" ({remainingMatches})";
+                Console.WriteLine(putInBrackets); //
+
+                if (remainingMatches > 1)
+                {
+                    startMatches = remainingMatches;
+                    Console.WriteLine(startMatches);
+                }
+                else
+                {
+                    Console.Write(player2);
+                    Console.WriteLine(" Wins !");
+                }
+            }*/
+            if (remainingMatches > 1)            
+            {
+                // AI Player2 Draw
+                double drawPlayer2I = 0;
+                /*Random random = new Random(); //initialize new random
+                int drawPlayer2I = random.Next(1, 4);*/
+                if (remainingMatches > 21)
+                {
+                    drawPlayer2I = remainingMatches - 21;
+                }
+                else if (remainingMatches > 17)
+                {
+                    drawPlayer2I = remainingMatches - 17;
+                }
+                else if (remainingMatches > 13)
+                {
+                    drawPlayer2I = remainingMatches - 13;
+                }
+                else if (remainingMatches > 9)
+                {
+                    drawPlayer2I = remainingMatches - 9;
+                }
+                else if (remainingMatches > 5)
+                {
+                    drawPlayer2I = remainingMatches - 5;
+                }
+                else if (remainingMatches == 5)
+                    {
+                        drawPlayer2I = 3;
+                    }
+                }
+            {
+                //drawPlayer2I = remainingMatches - 5;
+                    drawPlayer2I = (int)Math.Clamp((double)drawPlayer2I, 0, 3);
+            }
 
 
 
