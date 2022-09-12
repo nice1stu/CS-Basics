@@ -192,7 +192,10 @@ Console.WriteLine("Lets Play !");
             {
                 // AI Player2 Draw
                 double drawPlayer2I = 0;
-                if ( (remainingMatches > 21))
+                drawPlayer2I = (remainingMatches % 4) - 1;
+                    
+
+                /*if ( (remainingMatches > 21))
                 {
                     drawPlayer2I = remainingMatches - 21;
                 }
@@ -219,7 +222,7 @@ Console.WriteLine("Lets Play !");
                 else if (remainingMatches < 5)
                 {
                     drawPlayer2I = remainingMatches - 1;
-                }
+                }*/
                 drawPlayer2I = (int)Math.Clamp(drawPlayer2I, 1, 3);
                 Console.Write("HAL2000 draws ");
                 Console.WriteLine(drawPlayer2I);
