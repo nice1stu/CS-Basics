@@ -62,7 +62,6 @@ Console.WriteLine("Lets Play !");
                 //player1 Draw
                 int drawPlayer1I = 0;
                 Console.WriteLine(player1 + howMany);
-                //drawPlayer1I = 0;
                 while (drawPlayer1I != 1 && drawPlayer1I != 2 && drawPlayer1I != 3)
                 {
                     try
@@ -104,12 +103,10 @@ Console.WriteLine("Lets Play !");
                 // Player2 Draw
                 int drawPlayer2I = 0;
                 Console.WriteLine(player2 + howMany);
-                //drawPlayer2I = 0;
                 while (drawPlayer2I != 1 && drawPlayer2I != 2 && drawPlayer2I != 3)
                 {
                     try
                     {
-                        //string drawPlayer2 = Console.ReadLine();
                         drawPlayer2I = Convert.ToInt32(Console.ReadLine());
                         drawPlayer2I = (int)Math.Clamp((double)drawPlayer2I, 0, 3);
                     }
@@ -129,7 +126,7 @@ Console.WriteLine("Lets Play !");
                 }
 
                 string putInBrackets = $" ({remainingMatches})";
-                Console.WriteLine(putInBrackets); //
+                Console.WriteLine(putInBrackets);
 
                 if (remainingMatches > 1)
                 {
@@ -153,7 +150,6 @@ Console.WriteLine("Lets Play !");
                 //player1 Draw
                 int drawPlayer1I = 0;
                 Console.WriteLine(player1 + howMany);
-                //drawPlayer1I = 0;
                 while (drawPlayer1I != 1 && drawPlayer1I != 2 && drawPlayer1I != 3)
                 {
                     try
@@ -193,37 +189,8 @@ Console.WriteLine("Lets Play !");
                 // AI Player2 Draw
                 double drawPlayer2I = 0;
                 drawPlayer2I = (remainingMatches % 4) - 1;
-                    
-
-                /*if ( (remainingMatches > 21))
-                {
-                    drawPlayer2I = remainingMatches - 21;
-                }
-                else if (remainingMatches > 17)
-                {
-                    drawPlayer2I = remainingMatches - 17;
-                }
-                else if (remainingMatches > 13)
-                {
-                    drawPlayer2I = remainingMatches - 13;
-                }
-                else if (remainingMatches > 9)
-                {
-                    drawPlayer2I = remainingMatches - 9;
-                }
-                else if (remainingMatches > 5)
-                {
-                    drawPlayer2I = remainingMatches - 5;
-                }
-                else if (remainingMatches == 5)
-                {
-                    drawPlayer2I = 3;
-                }
-                else if (remainingMatches < 5)
-                {
-                    drawPlayer2I = remainingMatches - 1;
-                }*/
                 drawPlayer2I = (int)Math.Clamp(drawPlayer2I, 1, 3);
+                
                 Console.Write("HAL2000 draws ");
                 Console.WriteLine(drawPlayer2I);
 

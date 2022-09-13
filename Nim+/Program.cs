@@ -20,7 +20,7 @@ string player2;
 string currentPlayer;
 
 
-//Start Game
+//Setup Game
 
 //Number of players
 Console.WriteLine("Please enter the number of player 1 or 2");
