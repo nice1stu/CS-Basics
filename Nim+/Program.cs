@@ -16,6 +16,7 @@ Console.WriteLine(" ");
 double startMatches = 24;
 double remainingMatches = startMatches;
 string howMany = " How many matches do you want to draw?";
+//int difficulty;
 
 //int numPlayers;
 string player1;
@@ -40,8 +41,21 @@ else
 {
     Console.WriteLine("Player 1, please enter your name");
     player1 = Console.ReadLine();
-    Console.WriteLine("Player 2 is HAL2000");
-    player2 = "HAL2000";
+    Console.WriteLine("Choose your difficulty level:");
+    Console.WriteLine("(1) for Easy");
+    Console.WriteLine("(2) for impossible");
+    int difficulty = Convert.ToInt32(Console.ReadLine());
+    if (difficulty == 1)
+    {
+        player2 = "Wall-E";
+        Console.WriteLine("Player 2 is " + player2);
+    }
+    else
+    {
+        player2 = "HAL9000";
+        Console.WriteLine("Player 2 is " + player2);
+    }
+
 }
 
 //Game start
@@ -71,7 +85,7 @@ if (numPlayers == 2)
         }
         else
         {
-            EndGame();
+            break;
         }
     }
 }
@@ -83,7 +97,22 @@ else //single player with AI
         currentPlayer = player1;
         DrawMechanic();
         //player2AI Draw
-        DrawMechanicAi();
+        if (player2 == "Wall-E")
+        {
+
+            if (remainingMatches > 1)
+            {
+                DrawMechanicWALLE();
+            }
+            else
+            {
+                break;
+            }
+        }
+        else
+        {
+            DrawMechanicAi();
+        }
     }
 }
 
@@ -129,7 +158,7 @@ else //single player with AI
     }
 }
 
-//Draw mechanic AI
+//Draw mechanic HAL9000
     void DrawMechanicAi()
     {
             // AI Player2 Draw
@@ -162,6 +191,40 @@ else //single player with AI
                 EndGame();
             }
     }
+//Draw mechanic WALL-E
+void DrawMechanicWALLE()
+{
+    // AI Player2 Draw
+    Random random = new Random();
+    int drawPlayer2I = random.Next(1,4);
+    //drawPlayer2I = Math.Clamp(drawPlayer2I, 1, 3);
+    Console.Write("WALL-E draws ");
+    Console.WriteLine(drawPlayer2I);
+
+    remainingMatches = startMatches - drawPlayer2I;
+    remainingMatches = Math.Max(1, remainingMatches);
+    startMatches = remainingMatches;
+
+    for (int i = 0; i < startMatches; i++)
+    {
+        Console.Write("|");
+    }
+
+    string putInBrackets2 = $" ({remainingMatches})";
+    Console.WriteLine(putInBrackets2);
+
+    if (remainingMatches > 1)
+    {
+        startMatches = remainingMatches;
+        Console.WriteLine(startMatches);
+    }
+    else
+    {
+        Console.Write(player2);
+        Console.WriteLine(" Wins !");
+        EndGame();
+    }
+}
 //End Game
 void EndGame()
 {
