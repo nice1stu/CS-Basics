@@ -41,6 +41,7 @@ string currentPlayer;
         player1 = Console.ReadLine();
         Console.WriteLine("Player 2, please enter your name");
         player2 = Console.ReadLine();
+        Console.Clear();
     }
     else
     {
@@ -50,6 +51,7 @@ string currentPlayer;
         Console.WriteLine("[1] for Easy");
         Console.WriteLine("[2] for Hard");
         int difficulty = Convert.ToInt32(Console.ReadLine());
+        Console.Clear();
         if (difficulty == 1)
         {
             player2 = "Wall-E";
@@ -66,6 +68,7 @@ string currentPlayer;
 //Game start
     Console.WriteLine(" ");
     Console.WriteLine("Lets Play !");
+    Console.WriteLine(" ");
 
     for (int i = 0; i < startMatches; i++)
     {
@@ -242,10 +245,12 @@ void PlayAgain()
     int playAgain = Convert.ToInt32(Console.ReadLine());
     if (playAgain == 1)
     {
+        Console.Clear();
         StartGame();
     }
     else
     {
+        Console.Clear();
         EndGame();
     }
 }
