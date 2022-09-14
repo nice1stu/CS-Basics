@@ -1,5 +1,4 @@
 ﻿//Nim+ with AI Player
-//Start game
 Console.WriteLine("-- Welcome to Nim! --");
 Console.WriteLine(" ");
 Console.WriteLine("How to play");
@@ -20,16 +19,13 @@ void StartGame()
 double startMatches = 24;
 double remainingMatches = startMatches;
 string howMany = " How many matches do you want to draw?";
-//int difficulty;
 
 //int numPlayers;
 string player1;
 string player2;
 string currentPlayer;
 
-
 //Setup Game
-
 //Number of players
     Console.WriteLine("Please enter the number of player 1 or 2");
     int numPlayers = Convert.ToInt32(Console.ReadLine());
@@ -62,10 +58,9 @@ string currentPlayer;
             player2 = "HAL9000";
             Console.WriteLine("Player 2 is " + player2);
         }
-
     }
 
-//Game start
+//Start play
     Console.WriteLine(" ");
     Console.WriteLine("Lets Play !");
     Console.WriteLine(" ");
