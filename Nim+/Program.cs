@@ -1,11 +1,14 @@
 ﻿//Nim+ with AI Player
 //Start game
 Console.WriteLine("-- Welcome to Nim! --");
+Console.WriteLine(" ");
 Console.WriteLine("How to play");
+Console.WriteLine(" ");
 Console.WriteLine("2 Players");
 Console.WriteLine("Players take turns to draw matches");
 Console.WriteLine("Each player may draw 1,2 or 3 matches (not more or less)");
 Console.WriteLine("The Player who has to take last match loses");
+Console.WriteLine(" ");
 Console.WriteLine("Good Luck!");
 Console.WriteLine(" ");
 
@@ -18,7 +21,6 @@ string howMany = " How many matches do you want to draw?";
 string player1;
 string player2;
 string currentPlayer;
-
 
 //Setup Game
 
@@ -62,8 +64,15 @@ if (numPlayers == 2)
         currentPlayer = player1;
         DrawMechanic();
         //player2 Draw
-        currentPlayer = player2;
-        DrawMechanic();
+        if (remainingMatches > 1)
+        {
+            currentPlayer = player2;
+            DrawMechanic();
+        }
+        else
+        {
+            EndGame();
+        }
     }
 }
 else //single player with AI
@@ -74,7 +83,6 @@ else //single player with AI
         currentPlayer = player1;
         DrawMechanic();
         //player2AI Draw
-        //currentPlayer = player2;
         DrawMechanicAi();
     }
 }
@@ -119,7 +127,7 @@ else //single player with AI
         Console.WriteLine(" Wins !");
         EndGame();
     }
-    }
+}
 
 //Draw mechanic AI
     void DrawMechanicAi()
@@ -140,7 +148,7 @@ else //single player with AI
             }
 
             string putInBrackets2 = $" ({remainingMatches})";
-            Console.WriteLine(putInBrackets2); //
+            Console.WriteLine(putInBrackets2);
 
             if (remainingMatches > 1)
             {
@@ -157,5 +165,6 @@ else //single player with AI
 //End Game
 void EndGame()
 {
+    //Console.Clear();
     Console.WriteLine("Thanks for Playing");
 }
