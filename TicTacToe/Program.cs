@@ -25,7 +25,7 @@ int k2k8ColumnI = (k2I + k5I + k8I);
 int k3k9ColumnI = (k3I + k6I + k9I);
 int k1k9DiagonalI = (k1I + k5I + k9I);
 int k3k7DiagonalI = (k3I + k5I + k7I);
-// What value is shown
+// What value is shown use readkey
 string num1 = "1";
 string num2 = "2";
 string num3 = "3";
@@ -96,6 +96,7 @@ void start()
 //Clear screen !
 void DrawBoard()
 {
+    Console.Clear();
     string row3 = $"{num7} | {num8} | {num9}";
     string row2 = $"{num4} | {num5} | {num6}";
     string row1 = $"{num1} | {num2} | {num3}";
@@ -160,6 +161,7 @@ void player1Turn() // player1 choose
     Console.Write(player1);
     Console.WriteLine(" choose the Number of the square you want to place your x");
     string choicePlayer1 = Console.ReadLine();
+    // if occupied if cell = 0 or 10, choose another
     if (choicePlayer1 == "1")
     {
         num1 = "x";
@@ -216,6 +218,7 @@ void player2Turn()// player2 choose
     Console.Write(player2);
     Console.WriteLine(" choose the Number of the square you want to place your o");
     string choicePlayer2 = Console.ReadLine();
+    // if occupied if cell = 0 or 10, choose another
     if (choicePlayer2 == "1")
     {
         num1 = "o";
