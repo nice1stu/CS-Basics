@@ -36,7 +36,9 @@ string num7 = "7";
 string num8 = "8";
 string num9 = "9";
 
-
+start();
+update();
+// add hasWon bool to end game or loop
 /*
 //Number of players
 Console.WriteLine("Please enter the number of player 1 or 2");
@@ -113,10 +115,12 @@ void letsPlay()
     while (hasWon == false)
     {
         player1Turn();
+        update();
         winCheck();
         player2Turn();
-        winCheck();
         update();
+        winCheck();
+        
         // exit
     }
 }
@@ -280,6 +284,4 @@ void update()
     k3k7DiagonalI = (k3I + k5I + k7I);
 }
 
-start();
-update();
-// add hasWon bool to end game or loop
+
