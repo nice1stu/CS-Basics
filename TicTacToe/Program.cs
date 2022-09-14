@@ -146,6 +146,7 @@ void winCheck()
 void hasWonCheck(bool hasWon)
 {
     if (hasWon);
+    EndGame();
     Console.WriteLine(" Thanks for playing");
     //Console.Clear(); //clear the screen
 }
@@ -284,4 +285,10 @@ void update()
     k3k7DiagonalI = (k3I + k5I + k7I);
 }
 
-
+//End Game
+void EndGame()
+{
+    Console.WriteLine("Thanks for Playing");
+    //Console.Clear();
+    Environment.Exit(0);
+}
