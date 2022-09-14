@@ -108,7 +108,7 @@ string currentPlayer;
 
                 if (remainingMatches > 1)
                 {
-                    DrawMechanicWALLE();
+                    DrawMechanicWalLe();
                 }
                 else
                 {
@@ -199,7 +199,7 @@ string currentPlayer;
     }
 
 //Draw mechanic WALL-E
-    void DrawMechanicWALLE()
+    void DrawMechanicWalLe()
     {
         // AI Player2 Draw
         Random random = new Random();
@@ -253,6 +253,7 @@ void PlayAgain()
 //End Game
 void EndGame()
 {
-    //Console.Clear();
     Console.WriteLine("Thanks for Playing");
+    //Console.Clear();
+    Environment.Exit(0);
 }
