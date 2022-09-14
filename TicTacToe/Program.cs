@@ -36,8 +36,8 @@ string num7 = "7";
 string num8 = "8";
 string num9 = "9";
 
-start();
-update();
+Start();
+//update();
 // add hasWon bool to end game or loop
 /*
 //Number of players
@@ -63,7 +63,7 @@ else
 start();*/
 
 //Game start
-void start()
+void Start()
 {
     Console.WriteLine("-- Welcome to Tic Tac Toe --");
     
@@ -120,8 +120,6 @@ void letsPlay()
         player2Turn();
         update();
         winCheck();
-        
-        // exit
     }
 }
 
@@ -146,9 +144,8 @@ void winCheck()
 void hasWonCheck(bool hasWon)
 {
     if (hasWon);
-    EndGame();
-    Console.WriteLine(" Thanks for playing");
-    //Console.Clear(); //clear the screen
+    PlayAgain();
+    //Console.WriteLine(" Thanks for playing");
 }
 
 
@@ -284,11 +281,26 @@ void update()
     k1k9DiagonalI = (k1I + k5I + k9I);
     k3k7DiagonalI = (k3I + k5I + k7I);
 }
+void PlayAgain()
+{
+    Console.WriteLine("Would you like to play again?");
+    Console.WriteLine("[1] for YES : [2] for NO");
+    int playAgain = Convert.ToInt32(Console.ReadLine());
+    if (playAgain == 1)
+    {
+        Console.Clear();
+        Start();
+    }
+    else
+    {
+        Console.Clear();
+        EndGame();
+    }
+}
 
 //End Game
 void EndGame()
 {
     Console.WriteLine("Thanks for Playing");
-    //Console.Clear();
     Environment.Exit(0);
 }

@@ -131,7 +131,7 @@ string currentPlayer;
             try
             {
                 currentPlayerI = Convert.ToInt32(Console.ReadLine());
-                currentPlayerI = (int)Math.Clamp((double)currentPlayerI, 0, 3);
+                currentPlayerI = (int)Math.Clamp((double)currentPlayerI, 1, 3);
             }
             catch (Exception)
             {
@@ -199,7 +199,7 @@ string currentPlayer;
 //Draw mechanic WALL-E
     void DrawMechanicWalLe()
     {
-        // AI Player2 Draw
+        // AI Player2 Draw1
         Random random = new Random();
         int drawPlayer2I = random.Next(1, 4);
         //drawPlayer2I = Math.Clamp(drawPlayer2I, 1, 3);
