@@ -202,7 +202,6 @@ string currentPlayer;
         // AI Player2 Draw1
         Random random = new Random();
         int drawPlayer2I = random.Next(1, 4);
-        //drawPlayer2I = Math.Clamp(drawPlayer2I, 1, 3);
         Console.Write("WALL-E draws ");
         Console.WriteLine(drawPlayer2I);
 
@@ -254,6 +253,5 @@ void PlayAgain()
 void EndGame()
 {
     Console.WriteLine("Thanks for Playing");
-    //Console.Clear();
     Environment.Exit(0);
 }
