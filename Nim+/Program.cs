@@ -156,8 +156,7 @@ string currentPlayer;
         }
         else
         {
-            Console.Write(currentPlayer);
-            Console.WriteLine(" Wins !");
+            Console.WriteLine($"{currentPlayer} Wins !");
             PlayAgain();
         }
     }
@@ -190,8 +189,7 @@ string currentPlayer;
         }
         else
         {
-            Console.Write(player2);
-            Console.WriteLine(" Wins !");
+            Console.WriteLine($"{player2} Wins !");
             PlayAgain();
         }
     }
@@ -224,8 +222,7 @@ string currentPlayer;
         }
         else
         {
-            Console.Write(player2);
-            Console.WriteLine(" Wins !");
+            Console.WriteLine($"{player2} Wins !");
             PlayAgain();
         }
     }
