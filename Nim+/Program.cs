@@ -1,4 +1,14 @@
 ﻿//Nim+ with AI Player
+
+double startMatches;
+double remainingMatches;
+
+string player1;
+string player2;
+string currentPlayer;
+
+double drawPlayer2I;
+
 Console.WriteLine("-- Welcome to Nim! --");
 Console.WriteLine(" ");
 Console.WriteLine("How to play");
@@ -11,9 +21,6 @@ Console.WriteLine(" ");
 Console.WriteLine("Good Luck!");
 Console.WriteLine(" ");
 
-double startMatches;
-double remainingMatches;
-
 StartGame();
 
 void StartGame()
@@ -23,12 +30,6 @@ startMatches = 24;
 remainingMatches = startMatches;
 string howMany = " How many matches do you want to draw?";
 
-//int numPlayers;
-string player1;
-string player2;
-string currentPlayer;
-
-//Setup Game
 //Number of players
     Console.WriteLine("Please enter the number of player 1 or 2");
     int numPlayers = Convert.ToInt32(Console.ReadLine());
@@ -63,7 +64,7 @@ string currentPlayer;
         }
     }
 
-//Start play
+//Play start
     Console.WriteLine(" ");
     Console.WriteLine("Lets Play !");
     Console.WriteLine(" ");
@@ -76,7 +77,7 @@ string currentPlayer;
     string displayBrackets = $" ({remainingMatches})";
     Console.WriteLine(displayBrackets);
 
-//number of players
+    //2 players
     if (numPlayers == 2)
     {
         while (remainingMatches > 1)
@@ -123,7 +124,7 @@ string currentPlayer;
         }
     }
 
-//Draw mechanic
+    //Draw mechanic
     void DrawMechanic()
     {
         //currentPlayer Draw
@@ -148,72 +149,53 @@ string currentPlayer;
 
         if (remainingMatches > 1)
         {
-            //Display matches
             DisplayMatches();
         }
         else
         {
+            Console.WriteLine("There is 1 match left.");
             Console.WriteLine($"{currentPlayer} Wins !");
             PlayAgain();
         }
     }
 
-//Draw mechanic HAL9000 (%4 plays to win)
+    //Draw mechanic HAL9000 (%4 plays to win)
     void DrawMechanicAi()
     {
-        // AI Player2 Draw
-        double drawPlayer2I = (remainingMatches % 4) - 1;
+        // AI HAL9000 Draw
+        drawPlayer2I = (remainingMatches % 4) - 1;
         drawPlayer2I = (int)Math.Clamp(drawPlayer2I, 1, 3);
         Console.Write("HAL2000 draws ");
         Console.WriteLine(drawPlayer2I);
-
-        remainingMatches = startMatches - drawPlayer2I;
-        remainingMatches = Math.Max(1, remainingMatches);
-        startMatches = remainingMatches;
-
-        //Display matches
+        
+        CountMatches();
         DisplayMatches();
-
-        if (remainingMatches > 1)
-        {
-            startMatches = remainingMatches;
-            Console.WriteLine(startMatches);
-        }
-        else
-        {
-            Console.WriteLine($"{player2} Wins !");
-            PlayAgain();
-        }
+        CheckWin();
     }
 
-//Draw mechanic WALL-E (draws random amount)
+    //Draw mechanic WALL-E (draws random amount)
     void DrawMechanicWalLe()
     {
-        // AI Player2 Draw1
+        // AI WALL-E Draw1
         Random random = new Random();
-        int drawPlayer2I = random.Next(1, 4);
+        drawPlayer2I = random.Next(1, 4);
         Console.Write("WALL-E draws ");
         Console.WriteLine(drawPlayer2I);
-
-        remainingMatches = startMatches - drawPlayer2I;
-        remainingMatches = Math.Max(1, remainingMatches);
-        startMatches = remainingMatches;
-
-        //Display matches
-        DisplayMatches();
         
-        if (remainingMatches > 1)
-        {
-            startMatches = remainingMatches;
-            Console.WriteLine(startMatches);
-        }
-        else
-        {
-            Console.WriteLine($"{player2} Wins !");
-            PlayAgain();
-        }
+        CountMatches();
+        DisplayMatches();
+        CheckWin();
     }
 }
+
+//Calculate remaining matches
+void CountMatches()
+{
+    remainingMatches = startMatches - drawPlayer2I;
+    remainingMatches = Math.Max(1, remainingMatches);
+    startMatches = remainingMatches;
+}
+
 //Display matches onscreen
 void DisplayMatches()
 {
@@ -225,7 +207,23 @@ void DisplayMatches()
     string putInBrackets2 = $" ({remainingMatches})";
     Console.WriteLine(putInBrackets2);
 }
-//Play Again
+
+//Check for win
+void CheckWin()
+{
+    if (remainingMatches > 1)
+    {
+        startMatches = remainingMatches;
+    }
+    else
+    {
+        Console.WriteLine($"You must draw last match.");
+        Console.WriteLine($"{player2} Wins !");
+        PlayAgain();
+    }
+}
+
+//Ask Play Again
 void PlayAgain()
 {
     Console.WriteLine("Would you like to play again?");
