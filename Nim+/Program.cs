@@ -11,13 +11,16 @@ Console.WriteLine(" ");
 Console.WriteLine("Good Luck!");
 Console.WriteLine(" ");
 
+double startMatches;
+double remainingMatches;
+
 StartGame();
 
 void StartGame()
 {
-//Set up game
-double startMatches = 24;
-double remainingMatches = startMatches;
+//Set up new game
+startMatches = 24;
+remainingMatches = startMatches;
 string howMany = " How many matches do you want to draw?";
 
 //int numPlayers;
@@ -51,12 +54,12 @@ string currentPlayer;
         if (difficulty == 1)
         {
             player2 = "Wall-E";
-            Console.WriteLine("Player 2 is " + player2);
+            Console.WriteLine($"Player 2 is {player2}");
         }
         else
         {
             player2 = "HAL9000";
-            Console.WriteLine("Player 2 is " + player2);
+            Console.WriteLine($"Player 2 is {player2}");
         }
     }
 
@@ -104,7 +107,7 @@ string currentPlayer;
             if (player2 == "Wall-E")
             {
 
-                if (remainingMatches > 1)
+                if (remainingMatches > 0)
                 {
                     DrawMechanicWalLe();
                 }
@@ -145,14 +148,8 @@ string currentPlayer;
 
         if (remainingMatches > 1)
         {
-            //Drawing matches
-            for (int i = 0; i < startMatches; i++)
-            {
-                Console.Write("|");
-            }
-
-            string putInBrackets = $" ({remainingMatches})";
-            Console.WriteLine(putInBrackets);
+            //Display matches
+            DisplayMatches();
         }
         else
         {
@@ -161,7 +158,7 @@ string currentPlayer;
         }
     }
 
-//Draw mechanic HAL9000
+//Draw mechanic HAL9000 (%4 plays to win)
     void DrawMechanicAi()
     {
         // AI Player2 Draw
@@ -174,13 +171,8 @@ string currentPlayer;
         remainingMatches = Math.Max(1, remainingMatches);
         startMatches = remainingMatches;
 
-        for (int i = 0; i < startMatches; i++)
-        {
-            Console.Write("|");
-        }
-
-        string putInBrackets2 = $" ({remainingMatches})";
-        Console.WriteLine(putInBrackets2);
+        //Display matches
+        DisplayMatches();
 
         if (remainingMatches > 1)
         {
@@ -194,7 +186,7 @@ string currentPlayer;
         }
     }
 
-//Draw mechanic WALL-E
+//Draw mechanic WALL-E (draws random amount)
     void DrawMechanicWalLe()
     {
         // AI Player2 Draw1
@@ -207,14 +199,9 @@ string currentPlayer;
         remainingMatches = Math.Max(1, remainingMatches);
         startMatches = remainingMatches;
 
-        for (int i = 0; i < startMatches; i++)
-        {
-            Console.Write("|");
-        }
-
-        string putInBrackets2 = $" ({remainingMatches})";
-        Console.WriteLine(putInBrackets2);
-
+        //Display matches
+        DisplayMatches();
+        
         if (remainingMatches > 1)
         {
             startMatches = remainingMatches;
@@ -227,7 +214,17 @@ string currentPlayer;
         }
     }
 }
+//Display matches onscreen
+void DisplayMatches()
+{
+    for (int i = 0; i < startMatches; i++)
+    {
+        Console.Write("|");
+    }
 
+    string putInBrackets2 = $" ({remainingMatches})";
+    Console.WriteLine(putInBrackets2);
+}
 //Play Again
 void PlayAgain()
 {
