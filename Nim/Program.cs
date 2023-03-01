@@ -3,9 +3,9 @@
 double startMatches;
 double remainingMatches;
 
-string player1;
-string player2;
-string currentPlayer;
+string? player1;
+string? player2;
+string? currentPlayer;
 
 double drawPlayer2I;
 
